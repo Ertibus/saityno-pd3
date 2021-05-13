@@ -1,0 +1,70 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <!-- XSD validation file for: planets.xml -->
+    <!-- Root element -->
+    <xs:element name="planets" type="planetsType"/>
+    <!-- Orbit time object - Time it takes for the planet to orbit around the sun  -->
+    <xs:complexType name="orbit-timeType">
+        <!-- Atributes of orbit-time object-->
+        <xs:sequence>
+            <!-- Orbit time in years -->
+            <xs:element type="xs:float" name="years"/>
+            <!-- Orbit time in days -->
+            <xs:element type="xs:float" name="days"/>
+        </xs:sequence>
+    </xs:complexType>
+    <!-- Surface area object -->
+    <xs:complexType name="surface-areaType">
+        <xs:sequence>
+            <!-- Surface area in km^2 -->
+            <xs:element type="xs:long" name="km2"/>
+            <!-- Surface area in proportion to Earth -->
+            <xs:element type="xs:float" name="earths"/>
+        </xs:sequence>
+    </xs:complexType>
+    <!-- Temeprature object -->
+    <xs:complexType name="temperatureType">
+        <!-- Atributes of temeprature object-->
+        <xs:sequence>
+            <!-- Min temperature of the planets surface in Kelvin (K) -->
+            <xs:element name="min" type="xs:string"/>
+            <!-- Mean temperature of the planets surface in Kelvin (K) -->
+            <xs:element name="mean" type="xs:string"/>
+            <!-- Max temperature of the planets surface in Kelvin (K) -->
+            <xs:element name="max" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <!-- Planet object -->
+    <xs:complexType name="planetType">
+        <!-- Atributes of planet object -->
+        <xs:sequence>
+            <!-- Planets name -->
+            <xs:element name="name" type="xs:string"/>
+            <!-- God the planet is named after -->
+            <xs:element name="god" type="xs:string"/>
+            <!-- God aspect -->
+            <xs:element name="god-aspect" type="xs:string"/>
+            <!-- Orbit time object -->
+            <xs:element name="orbit-time" type="orbit-timeType"/>
+            <!-- How fast is the planet orbiting around the sun (km/s) -->
+            <xs:element name="orbital-speed" type="xs:float"/>
+            <!-- The minimum speed needed to escape from the gravitational influence of the sun. (km/s) -->
+            <xs:element name="escape-velocity" type="xs:float"/>
+            <!-- Surface gravity (m/s^2) -->
+            <xs:element name="gravity" type="xs:float"/>
+            <!-- Surface pressure (kPa); "type=string" because no pressure data on some of the planets -->
+            <xs:element name="surface-pressure" type="xs:string"/>
+            <!-- Surface area object -->
+            <xs:element name="surface-area" type="surface-areaType"/>
+            <!-- Number of NATURAL satellites -->
+            <xs:element name="satellites" type="xs:int"/>
+            <!-- Temperature Object -->
+            <xs:element name="temperature" type="temperatureType"/>
+        </xs:sequence>
+    </xs:complexType>
+    <!-- List planets of planet object -->
+    <xs:complexType name="planetsType">
+        <xs:sequence>
+            <xs:element name="planet" type="planetType" maxOccurs="unbounded" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>
