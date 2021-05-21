@@ -17,6 +17,7 @@ import javax.xml.bind.annotation.XmlType;
  * @see Planets
  */
 @XmlType(propOrder = {
+    "id",
     "name",
     "god",
     "godAspect",
@@ -30,7 +31,7 @@ import javax.xml.bind.annotation.XmlType;
     "temperature"
 })
 public class Planet {
-
+    private int id;
     private String name;
     private String god;
     private String godAspect;
@@ -42,6 +43,24 @@ public class Planet {
     private SurfaceArea surfaceArea;
     private int satellites;
     private Temperature temperature;
+
+    /**
+     * Getter for id of the planet.
+     *
+     * @return the id of the planet.
+     */
+    public int getId() {
+        return id;
+    }
+
+    /**
+     * Setter for id of the planet.
+     *
+     * @param id id of the planet.
+     */
+    public void setId(int id) {
+        this.id = id;
+    }
 
     /**
      * Getter for name of the planet.
@@ -272,6 +291,7 @@ public class Planet {
     @Override
     public String toString() {
         return String.format("\tPlanet:\n"
+                + "\t\tid:\t%s\n"
                 + "\t\tname:\t%s\n"
                 + "\t\tgod:\t%s\n"
                 + "\t\tgod aspect:\t%s\n"
@@ -282,6 +302,6 @@ public class Planet {
                 + "\t\tsurface pressure:\t%s\n"
                 + "%s\n"
                 + "\t\tsatellites:\t%d\n"
-                + "%s\n", name, god, godAspect, orbitTime, orbitalSpeed, escapeVelocity, gravity, surfacePressure, surfaceArea, satellites, temperature);
+                + "%s\n", id, name, god, godAspect, orbitTime, orbitalSpeed, escapeVelocity, gravity, surfacePressure, surfaceArea, satellites, temperature);
     }
 }

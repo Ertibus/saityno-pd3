@@ -35,8 +35,10 @@
     </xs:complexType>
     <!-- Planet object -->
     <xs:complexType name="planetType">
-        <!-- Atributes of planet object -->
+        <!-- Attributes of planet object -->
         <xs:sequence>
+            <!-- Planets id -->
+            <xs:element name="id" type="xs:int"/>
             <!-- Planets name -->
             <xs:element name="name" type="xs:string"/>
             <!-- God the planet is named after -->

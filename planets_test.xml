@@ -4,6 +4,7 @@
 <!-- Validation: XSD -->
 <planets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation=".\planets.xsd">
     <planet>
+        <id>0</id>
         <name>Mercury</name>
         <god>Hermes</god>
         <god-aspect>Commerce</god-aspect>
@@ -27,6 +28,7 @@
         </temperature>
     </planet>
     <planet>
+        <id>1</id>
         <name>Venus</name>
         <god>Venus</god>
         <god-aspect>Love and Beauty</god-aspect>
@@ -50,6 +52,7 @@
         </temperature>
     </planet>
     <planet>
+        <id>2</id>
         <name>Earth</name>
         <god/>
         <god-aspect/>
@@ -73,6 +76,7 @@
         </temperature>
     </planet>
     <planet>
+        <id>3</id>
         <name>Mars</name>
         <god>Mars</god>
         <god-aspect>War</god-aspect>
@@ -96,6 +100,7 @@
         </temperature>
     </planet>
     <planet>
+        <id>4</id>
         <name>Jupiter</name>
         <god>Jupiter</god>
         <god-aspect>Sky and Thunder</god-aspect>
@@ -119,6 +124,7 @@
         </temperature>
     </planet>
     <planet>
+        <id>5</id>
         <name>Saturn</name>
         <god>Saturn</god>
         <god-aspect>Wealth and Agriculture</god-aspect>
@@ -142,6 +148,7 @@
         </temperature>
     </planet>
     <planet>
+        <id>6</id>
         <name>Uranus</name>
         <god>Uranus</god>
         <god-aspect>Sky</god-aspect>
@@ -165,6 +172,7 @@
         </temperature>
     </planet>
     <planet>
+        <id>7</id>
         <name>Neptune</name>
         <god>Neptune</god>
         <god-aspect>Sea</god-aspect>
@@ -188,6 +196,7 @@
         </temperature>
     </planet>
     <planet>
+        <id>8</id>
         <name>Pluto</name>
         <god>Pluto</god>
         <god-aspect>Underworld</god-aspect>
@@ -211,6 +220,7 @@
         </temperature>
     </planet>
     <planet>
+        <id>9</id>
         <name>Eris</name>
         <god>Eris</god>
         <god-aspect>Strife and Discord</god-aspect>
