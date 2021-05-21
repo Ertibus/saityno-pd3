@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package lt.viko.eif.emargevicius.saityno.pojo;
+package lt.viko.eif.emargevicius.saityno.pd3.pojo;
 
 import java.util.ArrayList;
 import java.util.List;

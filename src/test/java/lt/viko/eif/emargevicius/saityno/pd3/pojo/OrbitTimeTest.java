@@ -1,4 +1,4 @@
-package lt.viko.eif.emargevicius.saityno.pojo;
+package lt.viko.eif.emargevicius.saityno.pd3.pojo;
 
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;

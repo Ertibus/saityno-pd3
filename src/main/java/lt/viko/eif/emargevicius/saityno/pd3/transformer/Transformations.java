@@ -1,4 +1,4 @@
-package lt.viko.eif.emargevicius.saityno.transformer;
+package lt.viko.eif.emargevicius.saityno.pd3.transformer;
 
 import java.io.File;
 import java.io.IOException;
@@ -16,7 +16,7 @@ import javax.xml.transform.stream.StreamSource;
 import javax.xml.validation.Schema;
 import javax.xml.validation.SchemaFactory;
 import javax.xml.validation.Validator;
-import lt.viko.eif.emargevicius.saityno.pojo.Planets;
+import lt.viko.eif.emargevicius.saityno.pd3.pojo.Planets;
 import org.xml.sax.SAXException;
 
 /**
