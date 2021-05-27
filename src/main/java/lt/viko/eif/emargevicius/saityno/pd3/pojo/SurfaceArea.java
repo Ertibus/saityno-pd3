@@ -1,5 +1,7 @@
 package lt.viko.eif.emargevicius.saityno.pd3.pojo;
 
+import io.swagger.v3.oas.annotations.media.Schema;
+
 import javax.xml.bind.annotation.XmlType;
 
 /**
@@ -17,9 +19,12 @@ import javax.xml.bind.annotation.XmlType;
     "km2",
     "earths"
 })
+@Schema(title = "Surface Area", description = "The Surface Area of the planet")
 public class SurfaceArea {
-
+    @Schema(title = "Km2", description = "Planets size in km2")
     private long km2;
+
+    @Schema(title = "Earths", description = "Planets size in comparison to Earth")
     private float earths;
 
     /**

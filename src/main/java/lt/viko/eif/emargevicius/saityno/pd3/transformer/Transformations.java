@@ -85,9 +85,8 @@ public class Transformations {
         String xmlContent = Files.readString(path);
 
         StringReader reader = new StringReader(xmlContent);
-        Planets planets = (Planets) unmarshaller.unmarshal(reader);
 
-        return planets;
+        return (Planets) unmarshaller.unmarshal(reader);
     }
 
     /**

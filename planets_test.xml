@@ -15,17 +15,12 @@
         <orbital-speed>47.362</orbital-speed>
         <escape-velocity>11.186</escape-velocity>
         <gravity>3.7</gravity>
-        <surface-pressure>0.0001</surface-pressure>
         <surface-area>
             <km2>74800000</km2>
             <earths>0.147</earths>
         </surface-area>
         <satellites>0</satellites>
-        <temperature>
-            <min>90</min>
-            <mean>270</mean>
-            <max>540</max>
-        </temperature>
+        <temperature>270</temperature>
     </planet>
     <planet>
         <id>1</id>
@@ -39,17 +34,12 @@
         <orbital-speed>35.02</orbital-speed>
         <escape-velocity>10.36</escape-velocity>
         <gravity>8.87</gravity>
-        <surface-pressure>9200</surface-pressure>
         <surface-area>
             <km2>460230000</km2>
             <earths>0.902</earths>
         </surface-area>
         <satellites>0</satellites>
-        <temperature>
-            <min/>
-            <mean>737</mean>
-            <max/>
-        </temperature>
+        <temperature>737</temperature>
     </planet>
     <planet>
         <id>2</id>
@@ -63,17 +53,12 @@
         <orbital-speed>29.78</orbital-speed>
         <escape-velocity>11.186</escape-velocity>
         <gravity>9.8</gravity>
-        <surface-pressure>101.325</surface-pressure>
         <surface-area>
             <km2>510072000</km2>
             <earths>1</earths>
         </surface-area>
         <satellites>1</satellites>
-        <temperature>
-            <min>184</min>
-            <mean>287.16</mean>
-            <max>330</max>
-        </temperature>
+        <temperature>287.16</temperature>
     </planet>
     <planet>
         <id>3</id>
@@ -87,17 +72,12 @@
         <orbital-speed>24.007</orbital-speed>
         <escape-velocity>5.027</escape-velocity>
         <gravity>3.72076</gravity>
-        <surface-pressure>0.636</surface-pressure>
         <surface-area>
             <km2>144798500</km2>
             <earths>0.284</earths>
         </surface-area>
         <satellites>2</satellites>
-        <temperature>
-            <min>130</min>
-            <mean>210</mean>
-            <max>308</max>
-        </temperature>
+        <temperature>210</temperature>
     </planet>
     <planet>
         <id>4</id>
@@ -111,17 +91,12 @@
         <orbital-speed>13.07</orbital-speed>
         <escape-velocity>59.5</escape-velocity>
         <gravity>27.79</gravity>
-        <surface-pressure>400</surface-pressure>
         <surface-area>
             <km2>61419000000</km2>
             <earths>120.4</earths>
         </surface-area>
         <satellites>79</satellites>
-        <temperature>
-            <min>130</min>
-            <mean>210</mean>
-            <max>308</max>
-        </temperature>
+        <temperature>210</temperature>
     </planet>
     <planet>
         <id>5</id>
@@ -135,17 +110,12 @@
         <orbital-speed>9.68</orbital-speed>
         <escape-velocity>35.5</escape-velocity>
         <gravity>10.44</gravity>
-        <surface-pressure>140</surface-pressure>
         <surface-area>
             <km2>42700000000</km2>
             <earths>83.703</earths>
         </surface-area>
         <satellites>82</satellites>
-        <temperature>
-            <min/>
-            <mean>109</mean>
-            <max/>
-        </temperature>
+        <temperature>109</temperature>
     </planet>
     <planet>
         <id>6</id>
@@ -159,17 +129,12 @@
         <orbital-speed>6.8</orbital-speed>
         <escape-velocity>21.3</escape-velocity>
         <gravity>8.69</gravity>
-        <surface-pressure/>
         <surface-area>
             <km2>8115600000</km2>
             <earths>15.91</earths>
         </surface-area>
         <satellites>27</satellites>
-        <temperature>
-            <min>47</min>
-            <mean>53</mean>
-            <max>57</max>
-        </temperature>
+        <temperature>53</temperature>
     </planet>
     <planet>
         <id>7</id>
@@ -183,17 +148,12 @@
         <orbital-speed>5.43</orbital-speed>
         <escape-velocity>23.5</escape-velocity>
         <gravity>11.15</gravity>
-        <surface-pressure/>
         <surface-area>
             <km2>7618300000</km2>
             <earths>14.98</earths>
         </surface-area>
         <satellites>14</satellites>
-        <temperature>
-            <min/>
-            <mean>72</mean>
-            <max/>
-        </temperature>
+        <temperature>72</temperature>
     </planet>
     <planet>
         <id>8</id>
@@ -207,17 +167,12 @@
         <orbital-speed>4.743</orbital-speed>
         <escape-velocity>1.212</escape-velocity>
         <gravity>0.620</gravity>
-        <surface-pressure>0.001</surface-pressure>
         <surface-area>
             <km2>17790000</km2>
             <earths>0.035</earths>
         </surface-area>
         <satellites>5</satellites>
-        <temperature>
-            <min>33</min>
-            <mean>44</mean>
-            <max>55</max>
-        </temperature>
+        <temperature>44</temperature>
     </planet>
     <planet>
         <id>9</id>
@@ -231,16 +186,11 @@
         <orbital-speed>3.434</orbital-speed>
         <escape-velocity>1.38</escape-velocity>
         <gravity>0.82</gravity>
-        <surface-pressure/>
         <surface-area>
             <km2>17000000</km2>
             <earths>0.033</earths>
         </surface-area>
         <satellites>1</satellites>
-        <temperature>
-            <min>30</min>
-            <mean>42.5</mean>
-            <max>55</max>
-        </temperature>
+        <temperature>42.5</temperature>
     </planet>
 </planets>

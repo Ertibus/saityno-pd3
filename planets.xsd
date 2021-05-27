@@ -21,18 +21,6 @@
             <xs:element type="xs:float" name="earths"/>
         </xs:sequence>
     </xs:complexType>
-    <!-- Temeprature object -->
-    <xs:complexType name="temperatureType">
-        <!-- Atributes of temeprature object-->
-        <xs:sequence>
-            <!-- Min temperature of the planets surface in Kelvin (K) -->
-            <xs:element name="min" type="xs:string"/>
-            <!-- Mean temperature of the planets surface in Kelvin (K) -->
-            <xs:element name="mean" type="xs:string"/>
-            <!-- Max temperature of the planets surface in Kelvin (K) -->
-            <xs:element name="max" type="xs:string"/>
-        </xs:sequence>
-    </xs:complexType>
     <!-- Planet object -->
     <xs:complexType name="planetType">
         <!-- Attributes of planet object -->
@@ -53,14 +41,12 @@
             <xs:element name="escape-velocity" type="xs:float"/>
             <!-- Surface gravity (m/s^2) -->
             <xs:element name="gravity" type="xs:float"/>
-            <!-- Surface pressure (kPa); "type=string" because no pressure data on some of the planets -->
-            <xs:element name="surface-pressure" type="xs:string"/>
             <!-- Surface area object -->
             <xs:element name="surface-area" type="surface-areaType"/>
             <!-- Number of NATURAL satellites -->
             <xs:element name="satellites" type="xs:int"/>
-            <!-- Temperature Object -->
-            <xs:element name="temperature" type="temperatureType"/>
+            <!-- Temperature float -->
+            <xs:element name="temperature" type="xs:float"/>
         </xs:sequence>
     </xs:complexType>
     <!-- List planets of planet object -->

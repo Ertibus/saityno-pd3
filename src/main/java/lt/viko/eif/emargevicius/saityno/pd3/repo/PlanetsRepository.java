@@ -7,24 +7,49 @@ import lt.viko.eif.emargevicius.saityno.pd3.transformer.Transformations;
 import javax.xml.bind.JAXBException;
 import java.io.IOException;
 import java.util.List;
-import java.util.Objects;
 
 public class PlanetsRepository {
-    private final static String DEFAULT_XML_IN_PATH = "planets_test.xml";
+    private final static String DEFAULT_XML_PATH = "planets.xml";
     private final static String DEFAULT_XSD_PATH = "planets.xsd";
 
-    private Transformations transformations = new Transformations(DEFAULT_XSD_PATH);
-    private Planets planets;
+    private static final Transformations transformations = new Transformations(DEFAULT_XSD_PATH);
+    private static Planets planets;
 
-    public PlanetsRepository() {
+    public static void retrieveData() {
         try {
-            planets = transformations.transformToPOJO(DEFAULT_XML_IN_PATH);
+            planets = transformations.transformToPOJO(DEFAULT_XML_PATH);
+        } catch (JAXBException | IOException e) {
+            e.printStackTrace();
+        }
+    }
+    public static void storeData(){
+        try {
+            transformations.transformToXML(planets, DEFAULT_XML_PATH);
         } catch (JAXBException | IOException e) {
             e.printStackTrace();
         }
     }
 
-    public List<Planet> getPlanets() {
+    public static List<Planet> getPlanets() {
+        retrieveData();
         return planets.getPlanets();
+    }
+
+    public static void addPlanet(Planet newPlanet) {
+        retrieveData();
+
+        List<Planet> updList = planets.getPlanets();
+        updList.add(newPlanet);
+        planets.setPlanets(updList);
+
+        storeData();
+    }
+
+    public static void setPlanets(List<Planet> planetList) {
+        retrieveData();
+
+        planets.setPlanets(planetList);
+
+        storeData();
     }
 }

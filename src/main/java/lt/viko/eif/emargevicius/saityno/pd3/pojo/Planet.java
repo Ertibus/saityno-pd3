@@ -1,5 +1,7 @@
 package lt.viko.eif.emargevicius.saityno.pd3.pojo;
 
+import io.swagger.v3.oas.annotations.media.Schema;
+
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
@@ -25,24 +27,44 @@ import javax.xml.bind.annotation.XmlType;
     "orbitalSpeed",
     "escapeVelocity",
     "gravity",
-    "surfacePressure",
     "surfaceArea",
     "satellites",
     "temperature"
 })
+@Schema(title = "Planet", description = "Planet object with many properties")
 public class Planet {
+    @Schema(title = "ID", description = "ID of the planet")
     private int id;
+
+    @Schema(title = "Name", description = "Name of the planet")
     private String name;
+
+    @Schema(title = "God", description = "God the planet is named after")
     private String god;
+
+    @Schema(title = "Gods Aspect", description =  "Aspect the God of the planet represent")
     private String godAspect;
+
+    @Schema(title = "Orbit Time", description = "Orbit Time of the planet")
     private OrbitTime orbitTime;
+
+    @Schema(title = "Orbital Speed", description = "Orbit Speed of the planet")
     private float orbitalSpeed;
+
+    @Schema(title = "Escape Velocity", description = "Escape velocity of the planet")
     private float escapeVelocity;
+
+    @Schema(title = "Gravity", description = "Gravity of the planet")
     private float gravity;
-    private String surfacePressure;
+
+    @Schema(title = "Surface Area", description = "Surface area of the planet")
     private SurfaceArea surfaceArea;
+
+    @Schema(title = "Satellites", description = "Satellites count of the planet")
     private int satellites;
-    private Temperature temperature;
+
+    @Schema(title = "Temperature", description = "Temperature of the planets surface")
+    private float temperature;
 
     /**
      * Getter for id of the planet.
@@ -201,25 +223,6 @@ public class Planet {
     }
 
     /**
-     * Getter for the pressure at the planets surface. Measured in kPa.
-     *
-     * @return surface pressure (kPa).
-     */
-    public String getSurfacePressure() {
-        return surfacePressure;
-    }
-
-    /**
-     * Setter for the pressure at the planets surface. Measured in kPa.
-     *
-     * @param surfacePressure surface pressure (kPa).
-     */
-    @XmlElement(name = "surface-pressure")
-    public void setSurfacePressure(String surfacePressure) {
-        this.surfacePressure = surfacePressure;
-    }
-
-    /**
      * Getter for the surface area object.
      *
      * @return the {@link SurfaceArea} object
@@ -259,26 +262,20 @@ public class Planet {
     }
 
     /**
-     * Getter for the
-     * {@link Temperature} object.
+     * Getter for the temperature.
      *
-     * @return {@link Temperature}
-     * object.
-     * @see Temperature
+     * @return a float representing the temperature of the planet
      */
-    public Temperature getTemperature() {
+    public float getTemperature() {
         return temperature;
     }
 
     /**
-     * Setter for the
-     * {@link Temperature} object.
+     * Setter for the temperature
      *
-     * @param temperature
-     * {@link Temperature} object.
-     * @see Temperature
+     * @param temperature a float representing the temperature of the planet
      */
-    public void setTemperature(Temperature temperature) {
+    public void setTemperature(float temperature) {
         this.temperature = temperature;
     }
 
@@ -302,6 +299,6 @@ public class Planet {
                 + "\t\tsurface pressure:\t%s\n"
                 + "%s\n"
                 + "\t\tsatellites:\t%d\n"
-                + "%s\n", id, name, god, godAspect, orbitTime, orbitalSpeed, escapeVelocity, gravity, surfacePressure, surfaceArea, satellites, temperature);
+                + "\t\ttemperature:\t%f\n", id, name, god, godAspect, orbitTime, orbitalSpeed, escapeVelocity, gravity, surfaceArea, satellites, temperature);
     }
 }

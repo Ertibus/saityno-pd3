@@ -1,5 +1,7 @@
 package lt.viko.eif.emargevicius.saityno.pd3.pojo;
 
+import io.swagger.v3.oas.annotations.media.Schema;
+
 import javax.xml.bind.annotation.XmlType;
 
 /**
@@ -15,8 +17,11 @@ import javax.xml.bind.annotation.XmlType;
     "years",
     "days"
 }, name = "orbit-time")
+@Schema(name = "OrbitTime", title = "Orbit Time", description = "Orbit time of the planet in days and years")
 public class OrbitTime {
+    @Schema(name = "Years", description = "Orbit time in years")
     private float years;
+    @Schema(description = "Orbit time in days")
     private float days;
     /**
      * Getter for years it takes for the planet to rotate around the sun.

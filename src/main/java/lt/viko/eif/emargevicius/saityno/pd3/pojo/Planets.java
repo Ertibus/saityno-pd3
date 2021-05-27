@@ -1,5 +1,7 @@
 package lt.viko.eif.emargevicius.saityno.pd3.pojo;
 
+import io.swagger.v3.oas.annotations.media.Schema;
+
 import java.util.List;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -16,8 +18,9 @@ import java.util.stream.Collectors;
  * @see Planet
  */
 @XmlRootElement
+@Schema(title = "Planets", description = "Planets root object")
 public class Planets {
-
+    @Schema(title = "Planets", description = "Stored planet list")
     private List<Planet> planets;
 
     /**

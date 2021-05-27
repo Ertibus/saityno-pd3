@@ -106,21 +106,6 @@ public class PlanetTest {
         float result = instance.getGravity();
         assertEquals(expResult, result);
     }
-    
-    /**
-     * Test of setSurfacePressure and getSurfacePressure methods, of class Planet.
-     */
-    @Test
-    public void testSetGetSurfacePressure() {
-        System.out.println("Testing setSurfacePressure and getSurfacePressure methods");
-        Planet instance = new Planet();
-        String surfacePressure = "987654";
-        String expResult = "987654";
-        
-        instance.setSurfacePressure(surfacePressure);
-        String result = instance.getSurfacePressure();
-        assertEquals(expResult, result);
-    }
 
     /**
      * Test of setSurfaceArea and getSurfaceArea methods, of class Planet.
@@ -159,11 +144,9 @@ public class PlanetTest {
     public void testGetTemperature() {
         System.out.println("Testing setTemperature and getTemperature methods");
         Planet instance = new Planet();
-        Temperature expResult = new Temperature();
-        Temperature temperature = new Temperature();
         
-        instance.setTemperature(temperature);
-        Temperature result = instance.getTemperature();
-        assertEquals(expResult.toString(), result.toString());
+        instance.setTemperature(10f);
+        float result = instance.getTemperature();
+        assertEquals(10f, result);
     }
 }
