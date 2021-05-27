@@ -23,8 +23,8 @@ import org.xml.sax.SAXException;
  * Class that handles all transformation logic.
  *
  * @author Emil
- * @version 1.0-SNAPSHOT
- * @since 1.0-SNAPSHOT
+ * @version 1.0
+ * @since 1.0
  */
 public class Transformations {
 

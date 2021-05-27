@@ -21,15 +21,25 @@ import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 
 import java.util.List;
 import java.util.NoSuchElementException;
-import java.util.Objects;
 import java.util.stream.Collectors;
 
+/**
+ * Planets API Controller.
+ *
+ * @author Emil
+ * @version 1.0
+ * @since 1.0
+ */
 @RestController
 @RequestMapping(value = "/planets", produces = MediaType.APPLICATION_JSON_VALUE)
 @Tag(name = "PlanetsAPI", description = "PlanetsResourceController")
 public class PlanetsResourceController {
-
-    @GetMapping(produces = { "application/json", "application/xml" })
+    /**
+     * Get All Planets request.
+     * Returns all of the planets
+     * @return ResponseEntity<CollectionModel<EntityModel<Planet>>> Planet list with links
+     */
+    @GetMapping
     @Operation(summary = "Get All Planets", description = "Returns all planets stored in the repository")
     public ResponseEntity<CollectionModel<EntityModel<Planet>>> allPlanets() {
         List<EntityModel<Planet>> students = PlanetsRepository.getPlanets().stream()
@@ -42,7 +52,13 @@ public class PlanetsResourceController {
         return ResponseEntity.ok(CollectionModel.of(students, linkTo(methodOn(PlanetsResourceController.class).allPlanets()).withSelfRel()));
     }
 
-    @GetMapping(value = "/{name}", produces = { "application/json", "application/xml" })
+    /**
+     * Get planet by name
+     * Returns a specified by name planet
+     * @param name of the planet to get
+     * @return ResponseEntity<EntityModel<Planet>> planet object with links
+     */
+    @GetMapping(value = "/{name}")
     @Operation(summary = "Get Planet", description = "Returns a planet by name stored in the repository")
     @ApiResponses(
             value = {
@@ -65,7 +81,14 @@ public class PlanetsResourceController {
         return ResponseEntity.ok(model);
     }
 
-    @PostMapping(consumes = { "application/json", "application/xml" }, produces = { "application/json", "application/xml" })
+
+    /**
+     * Create a new planet
+     * Adds the given planet into the repository if the name is not taken
+     * @param newPlanet a {@link Planet} object to add
+     * @return
+     */
+    @PostMapping(consumes = { "application/json", "application/xml" })
     @Operation(summary = "Post Planet", description = "Posts a planet into the repository")
     @ApiResponses(
             value = {
@@ -88,7 +111,15 @@ public class PlanetsResourceController {
         return ResponseEntity.ok(model);
     }
 
-    @PutMapping(value = "/{name}", consumes = { "application/json", "application/xml" }, produces = { "application/json", "application/xml" })
+    /**
+     * Update/Create a planet by name
+     * Updates a planet with the given name. If the planet is not in the repository, it is added
+     *
+     * @param name of the planet to change/create
+     * @param newPlanet a {@link Planet} object
+     * @return
+     */
+    @PutMapping(value = "/{name}", consumes = { "application/json", "application/xml" })
     @Operation(summary = "Put Planet", description = "Puts a planet into the repository. If the planet already exists it updates it.")
     @ApiResponses(
             value = {
@@ -121,7 +152,13 @@ public class PlanetsResourceController {
         return ResponseEntity.ok(model);
     }
 
-    @DeleteMapping(value = "/{name}", consumes = { "application/json", "application/xml" }, produces = { "application/json", "application/xml" })
+    /**
+     * Remove a planet from the repository.
+     * Removes the planet from the repository by it's name
+     * @param name of the planet to remove
+     * @return the full list after the removal
+     */
+    @DeleteMapping(value = "/{name}")
     @Operation(summary = "Delete Planet", description = "Deletes a planet from the repository")
     @ApiResponses(
             value = {
@@ -145,17 +182,4 @@ public class PlanetsResourceController {
 
         return allPlanets();
     }
-
-/*
-    @GetMapping("/")
-    public ResponseEntity<EntityModel<Planet>> getById(@RequestParam Long id) {
-        Planet planet;
-        try {
-            planet = planetsRepo.getPlanets().stream().filter(n -> n.getId() == id).findAny().get();
-        }catch (NoSuchElementException e) {
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "ID not found");
-        }
-        return getByName(planet.getName());
-    }
-*/
 }

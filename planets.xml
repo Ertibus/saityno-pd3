@@ -190,23 +190,4 @@
         <satellites>1</satellites>
         <temperature>42.5</temperature>
     </planet>
-    <planet>
-        <id>0</id>
-        <name>Test</name>
-        <god>string</god>
-        <god-aspect>string</god-aspect>
-        <orbit-time>
-            <years>0.0</years>
-            <days>0.0</days>
-        </orbit-time>
-        <orbital-speed>0.0</orbital-speed>
-        <escape-velocity>0.0</escape-velocity>
-        <gravity>0.0</gravity>
-        <surface-area>
-            <km2>0</km2>
-            <earths>0.0</earths>
-        </surface-area>
-        <satellites>0</satellites>
-        <temperature>0.0</temperature>
-    </planet>
 </planets>
