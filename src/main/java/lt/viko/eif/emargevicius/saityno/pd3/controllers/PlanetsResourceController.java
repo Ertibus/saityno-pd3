@@ -38,18 +38,19 @@ public class PlanetsResourceController {
      * Get All Planets request.
      * Returns all of the planets
      * @return ResponseEntity<CollectionModel<EntityModel<Planet>>> Planet list with links
+     * @see Planet
      */
     @GetMapping
     @Operation(summary = "Get All Planets", description = "Returns all planets stored in the repository")
     public ResponseEntity<CollectionModel<EntityModel<Planet>>> allPlanets() {
-        List<EntityModel<Planet>> students = PlanetsRepository.getPlanets().stream()
+        List<EntityModel<Planet>> planets = PlanetsRepository.getPlanets().stream()
                 .map(planet -> EntityModel.of(planet,
                         linkTo(methodOn(PlanetsResourceController.class).getByName(planet.getName())).withSelfRel(),
                         linkTo(methodOn(PlanetsResourceController.class).allPlanets()).withRel("get-all-planets")
                         )
                 ).collect(Collectors.toList());
 
-        return ResponseEntity.ok(CollectionModel.of(students, linkTo(methodOn(PlanetsResourceController.class).allPlanets()).withSelfRel()));
+        return ResponseEntity.ok(CollectionModel.of(planets, linkTo(methodOn(PlanetsResourceController.class).allPlanets()).withSelfRel()));
     }
 
     /**
@@ -57,6 +58,7 @@ public class PlanetsResourceController {
      * Returns a specified by name planet
      * @param name of the planet to get
      * @return ResponseEntity<EntityModel<Planet>> planet object with links
+     * @see Planet
      */
     @GetMapping(value = "/{name}")
     @Operation(summary = "Get Planet", description = "Returns a planet by name stored in the repository")
@@ -85,8 +87,9 @@ public class PlanetsResourceController {
     /**
      * Create a new planet
      * Adds the given planet into the repository if the name is not taken
-     * @param newPlanet a {@link Planet} object to add
-     * @return
+     * @param newPlanet a {@link Planet} object to add     * @see Planet
+     * @return ResponseEntity<EntityModel<Planet>> planet object with links
+     * @see Planet
      */
     @PostMapping(consumes = { "application/json", "application/xml" })
     @Operation(summary = "Post Planet", description = "Posts a planet into the repository")
@@ -117,7 +120,7 @@ public class PlanetsResourceController {
      *
      * @param name of the planet to change/create
      * @param newPlanet a {@link Planet} object
-     * @return
+     * @return ResponseEntity<CollectionModel<EntityModel<Planet>>> Planet with links
      */
     @PutMapping(value = "/{name}", consumes = { "application/json", "application/xml" })
     @Operation(summary = "Put Planet", description = "Puts a planet into the repository. If the planet already exists it updates it.")
